@@ -165,4 +165,32 @@ Response:
 * Queue cancellation or rescheduling.
 * Multi-doctor scheduling integration.
 
+---
 
+
+
+
+## 🚀 Running Locally
+
+1. Clone repo
+
+```bash
+git clone https://github.com/Dorcie-dee/medPharma_care
+cd medPharma-care
+```
+
+2. Backend setup
+
+```bash
+cd medPharma-care
+npm install
+npm run dev
+```
+
+3. Frontend setup
+
+```bash
+cd medPharma-frontend
+npm install
+npm start
+```
