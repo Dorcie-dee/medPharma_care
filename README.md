@@ -1,4 +1,17 @@
 
+# **MedPharma Appointment & Turn Management System**
+
+Welcome to the MedPharma Appointment & Turn Management System! 🩺✨
+
+This platform is designed to make scheduling and managing medical appointments simple and efficient. Patients can book appointments, track their turn, and receive real-time notifications when it’s their time. Staff can easily monitor schedules, reschedule, or cancel appointments, ensuring a smooth experience for everyone.
+
+Built with a **Node.js backend**, **MongoDB database**, and a **mobile-friendly React frontend**, this system also features **real-time turn alerts** via Socket.io. It’s secure, responsive, and designed with user experience in mind.
+
+Check out the **API documentation**, explore the **frontend interface**, and see how the real-time features keep everyone updated seamlessly! 
+
+---
+
+
 # 🏥 Real-Time Appointment Queue System
 
 ## 📌 1. Overview
