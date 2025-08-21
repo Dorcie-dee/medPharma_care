@@ -7,23 +7,6 @@ import http from "http";
 import { Server } from "socket.io";
 
 
-//database connection
-(async () => {
-  try {
-    await mongoose.connect(process.env.MONGO_URI);
-    console.log("Database connected successfully.");
-
-    //listening for incoming request
-    app.listen(port, () => {
-      console.log(`Server listening attentively`);
-    });
-
-  } catch (err) {
-    console.error("Database connection failed:", err);
-    process.exit(1);   //exit process if DB connection fails
-  }
-})();
-
 //create an express app
 const app = express();
 const port = process.env.PORT || 5000;
@@ -35,6 +18,25 @@ app.use(express.json());
 //use routes
 app.use("/api/appointments", appointmentRouter);
 app.use("/api/doctors", doctorRouter);
+
+
+//database connection
+(async () => {
+  try {
+    await mongoose.connect(process.env.MONGO_URI);
+    console.log("Database connected successfully.");
+
+    //listening for incoming request
+    server.listen(port, () => {
+      console.log(`🚀 Server listening on http://localhost:${port}`);
+    });
+
+  } catch (err) {
+    console.error("Database connection failed:", err);
+    process.exit(1);   //exit process if DB connection fails
+  }
+})();
+
 
 
 //create HTTP server

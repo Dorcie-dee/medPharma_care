@@ -58,7 +58,7 @@ export const createAppointment = async (req, res) => {
 
     let estimatedWaitTime;
     if (queueNumber === 1) {
-      estimatedWaitTime = "Available now";
+      estimatedWaitTime = "Available now, 0";
     } else {
       estimatedWaitTime = `${(queueNumber - 1) * CONSULTATION_DURATION + doctorDelay} minutes`;
     }
