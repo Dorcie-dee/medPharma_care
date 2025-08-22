@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { createAppointment, getAppointmentStatus, updateAppointmentStatus } from "../controllers/appointmentController.js";
+import { createAppointment, getAppointmentsByDoctor, getAppointmentStatus, updateAppointmentStatus } from "../controllers/appointmentController.js";
 
 
 const appointmentRouter = Router();
@@ -11,6 +11,10 @@ appointmentRouter.get("/:id/status", getAppointmentStatus);
 
 //doctor's live appointment update
 appointmentRouter.patch("/:id/status", updateAppointmentStatus)
+
+//all doctor appointments for the day
+appointmentRouter.get("/doctor/:doctorId", getAppointmentsByDoctor);
+
 
 
 export default appointmentRouter;

@@ -254,3 +254,21 @@ export const getAppointmentStatus = async (req, res) => {
     });
   }
 };
+
+
+
+//all appointments for a specific dorctor
+export const getAppointmentsByDoctor = async (req, res) => {
+  try {
+    const { doctorId } = req.params;
+
+    const appointments = await appointmentModel.find({ doctorId }).sort({
+      queuePosition: 1, // so they appear in order
+    });
+
+    res.status(200).json(appointments);
+  } catch (error) {
+    res.status(500).json({ message: "Error fetching appointments", error });
+  }
+};
+
