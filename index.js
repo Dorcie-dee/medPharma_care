@@ -28,7 +28,7 @@ app.use("/api/doctors", doctorRouter);
 
     //listening for incoming request
     server.listen(port, () => {
-      console.log(`🚀 Server listening on http://localhost:${port}`);
+      console.log(`🚀 Server listening`);
     });
 
   } catch (err) {
