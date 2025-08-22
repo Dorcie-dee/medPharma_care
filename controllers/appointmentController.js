@@ -219,7 +219,8 @@ export const getAppointmentStatus = async (req, res) => {
     //finding how many patients are ahead in queue (live)
     const aheadInQueue = await appointmentModel.countDocuments({
       doctorId: doctor._id,
-      status: "waiting",
+      status: { $in: ["waiting", "in-progress"] },
+      // status: "waiting",
       createdAt: { $lt: existingAppointment.createdAt }   //booked before this appointment
     });
 
